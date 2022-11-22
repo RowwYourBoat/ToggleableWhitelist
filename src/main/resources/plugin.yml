@@ -1,0 +1,27 @@
+name: ToggleableWhitelist
+version: '${project.version}'
+main: me.rowanscripts.toggleablewhitelist.ToggleableWhitelist
+api-version: 1.18
+authors: [ Rowan ]
+description: Intended for 3rd/Last/DoubleLife servers. Gives administrators the ability to toggle whether whitelisted players are able to connect to the server.
+website: https://github.com/RowwYourBoat/ToggleableWhitelist
+
+commands:
+  togglejoining:
+    permission: whitelist.admin
+    usage: /togglejoining
+    description: Toggles whether whitelisted players are able to join.
+  reloadwhitelist:
+    permission: whitelist.admin
+    usage: /reloadwhitelist
+    description: Reloads the configured settings into the server without having to reload/restart it.
+
+permissions:
+  whitelist.admin:
+    default: op
+    description: Grants access to all ToggleableWhitelist commands!
+    children:
+      - whitelist.bypass
+  whitelist.bypass:
+    default: false
+    description: Grants the ability to bypass the whitelist!
