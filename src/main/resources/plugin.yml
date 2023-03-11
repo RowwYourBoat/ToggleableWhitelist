@@ -19,7 +19,7 @@ commands:
 permissions:
   whitelist.admin:
     default: op
-    description: Grants access to all ToggleableWhitelist commands!
+    description: Grants access to all CustomWhitelist commands!
     children:
       - whitelist.bypass
   whitelist.bypass:

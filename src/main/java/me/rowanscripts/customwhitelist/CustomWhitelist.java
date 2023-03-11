@@ -1,4 +1,4 @@
-package me.rowanscripts.CustomWhitelist;
+package me.rowanscripts.customwhitelist;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,9 +19,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
-public final class ToggleableWhitelist extends JavaPlugin implements Listener {
+public final class CustomWhitelist extends JavaPlugin implements Listener {
 
-    public static ToggleableWhitelist plugin;
+    public static CustomWhitelist plugin;
     public static boolean joiningAllowed;
 
     private File whitelistFile;
@@ -81,23 +81,24 @@ public final class ToggleableWhitelist extends JavaPlugin implements Listener {
             event.disallow(PlayerLoginEvent.Result.KICK_WHITELIST, ChatColor.RED + whitelistYaml.getString("closed_message"));
         }
     }
-}
 
-class mainCommandExecutor implements CommandExecutor {
+    public class mainCommandExecutor implements CommandExecutor {
 
-    @Override
-    public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, String label, String[] args) {
-        if (label.equalsIgnoreCase("togglejoining")) {
-            ToggleableWhitelist.joiningAllowed = !ToggleableWhitelist.joiningAllowed;
-            if (ToggleableWhitelist.joiningAllowed)
-                sender.sendMessage(ChatColor.DARK_GREEN + "Whitelisted players will now be able to join!");
-            else
-                sender.sendMessage(ChatColor.RED + "Whitelisted players will now no longer be able to join!");
-        } else if (label.equalsIgnoreCase("reloadwhitelist")) {
-            ToggleableWhitelist.plugin.reloadSettings();
-            sender.sendMessage(ChatColor.DARK_GREEN + "You've loaded the settings file into the server!");
+        @Override
+        public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, String label, String[] args) {
+            if (label.equalsIgnoreCase("togglejoining")) {
+                CustomWhitelist.joiningAllowed = !CustomWhitelist.joiningAllowed;
+                if (CustomWhitelist.joiningAllowed)
+                    sender.sendMessage(ChatColor.DARK_GREEN + "Whitelisted players will now be able to join!");
+                else
+                    sender.sendMessage(ChatColor.RED + "Whitelisted players will now no longer be able to join!");
+            } else if (label.equalsIgnoreCase("reloadwhitelist")) {
+                CustomWhitelist.plugin.reloadSettings();
+                sender.sendMessage(ChatColor.DARK_GREEN + "You've loaded the settings file into the server!");
+            }
+            return true;
         }
-        return true;
+
     }
 
 }
