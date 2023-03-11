@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.rowanscripts</groupId>
-    <artifactId>ToggleableWhitelist</artifactId>
+    <artifactId>CustomWhitelist</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>ToggleableWhitelist</name>
+    <name>CustomWhitelist</name>
 
     <description>Meant for 3rd/Last/DoubleLife servers. Gives administrators the ability to toggle whether whitelisted
         players are able to connect to the server.
@@ -71,7 +71,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.18-R0.1-SNAPSHOT</version>
+            <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

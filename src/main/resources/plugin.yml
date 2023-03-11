@@ -1,10 +1,10 @@
-name: ToggleableWhitelist
+name: CustomWhitelist
 version: '${project.version}'
-main: me.rowanscripts.toggleablewhitelist.ToggleableWhitelist
+main: me.rowanscripts.customwhitelist.CustomWhitelist
 api-version: 1.18
 authors: [ Rowan ]
 description: Intended for 3rd/Last/DoubleLife servers. Gives administrators the ability to toggle whether whitelisted players are able to connect to the server.
-website: https://github.com/RowwYourBoat/ToggleableWhitelist
+website: https://github.com/RowwYourBoat/CustomWhitelist
 
 commands:
   togglejoining:

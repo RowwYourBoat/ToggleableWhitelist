@@ -1,4 +1,4 @@
-package me.rowanscripts.toggleablewhitelist;
+package me.rowanscripts.CustomWhitelist;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -13,6 +13,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,7 +86,7 @@ public final class ToggleableWhitelist extends JavaPlugin implements Listener {
 class mainCommandExecutor implements CommandExecutor {
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, String label, String[] args) {
         if (label.equalsIgnoreCase("togglejoining")) {
             ToggleableWhitelist.joiningAllowed = !ToggleableWhitelist.joiningAllowed;
             if (ToggleableWhitelist.joiningAllowed)
